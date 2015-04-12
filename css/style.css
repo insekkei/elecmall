@@ -153,6 +153,7 @@ nav>ul>li>ul{
 	position:absolute;
 	width:176px;
 	top:41px;
+	left:0;
 }
 .all-cat>ul{
 	display:none;
