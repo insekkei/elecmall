@@ -15,11 +15,58 @@ footer{
     width:1104px;
     margin:0 auto;
 }
+
 a{
     color:#222;
 }
 span,a{
     display:inline-block;
+}
+/*contact*/
+.contact{
+	position:fixed;
+	width: 60px;
+	background: #C39766;
+	top:100px;
+	right: 2px;
+}
+.wechat:before,.qq:before{
+	content:"";
+	display:inline-block;
+	width:60px;
+	height: 60px;
+}
+.contact a{
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	line-height:1em;
+}
+#to-top{
+	width:100%;
+	background:#C39766;
+	height:60px;
+	line-height:80px;
+	position:relative;
+	border-top:1px solid #fff;
+	display:none;
+}
+#to-top:before{
+	content:"^";
+	display:block;
+	position:absolute;
+	width:100%;
+	left:0;
+	top:-15px;
+	font-size:28px;
+}
+.wechat:before{
+	background:url(../images/wechat.png) no-repeat 3px;
+	background-size:54px auto;
+}
+.qq:before{
+	background:url(../images/qq.png) no-repeat 3px;
+	background-size:54px auto;
 }
 /*header*/
 .menus{
@@ -36,6 +83,7 @@ a.selected{
 }
 .menus .right{
     float:right;
+    margin-left:14px;
 }
 header{
     margin:1em 0;
@@ -51,7 +99,7 @@ header .my{
 	position:relative;
 }
 .logos h1{
-	width:320px;
+	width: 314px;
 }
 .logos .logo{
 	width:200px;
@@ -86,12 +134,8 @@ header .my{
 	position: relative;
 	left: -40px;
 }
-.button.my{
-	border: 1px solid #F0A44B;
-	padding:5px 15px;
-	color: #fff;
-}
-.button.my:before{
+
+.my:before{
 	content:"";
 	display:inline-block;
 	width:16px;
@@ -197,6 +241,15 @@ nav>ul>li>ul{
 	vertical-align: middle;
 }
 /*slides*/
+.slide-ad{
+	position:absolute;
+	right:0;
+	top:0;
+}
+.slide-ad img{
+	height:375px;
+	width:200px;
+}
 .slides{
 	position: relative;
 	width:100%;
