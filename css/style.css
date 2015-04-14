@@ -101,11 +101,50 @@ header .my{
 .logos h1{
 	width: 314px;
 }
+.qwg-link{
+	background: #3396D4;
+	color:#fff;
+	width:60px;
+	height:60px;
+	text-align:center;
+	border-radius:50%;
+	line-height:60px;
+	vertical-align: top;
+	position:absolute;
+	top:-10px;
+	left:130px;
+	animation:translateY .4s linear 3;
+	-webkit-animation:translateY .4s linear 3;
+}
+@keyframes translateY{ 
+0%{
+	transform:translateY(0);
+}
+50%{ 
+	transform:translateY(5px);
+} 
+
+100%{
+	transform:translateY(0px);
+}
+}
+@-webkit-keyframes translateY{ 
+0%{
+	-webkit-transform:translateY(0);
+}
+50%{ 
+	-webkit-transform:translateY(5px);
+} 
+
+100%{
+	-webkit-transform:translateY(0px);
+}
+}
 .logos .logo{
-	width:200px;
+	width: 125px;
 	height: 40px;
 	background:url(../images/logo.png) no-repeat;
-	background-size:contain;
+	background-size: auto 40px;
 }
 .logos a span{
 	display:none;
@@ -647,7 +686,7 @@ footer>p a{
 }
 .fenqi.after strong{
 	text-decoration:underline;
-	font-style:italic;
+	font-weight:bold;
 	color:#C49A6A;
 }
 .sc-value{
