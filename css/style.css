@@ -163,8 +163,7 @@ header .my{
 #submit{
 	background: #F0A44B;
 	color:#fff; 
-	padding:0 20px
- */}
+	padding: 0 17px;}
 .search-form #submit{
 	background: #F0A44B url(../images/sear.png) no-repeat 3px;
 	background-size: auto 30px;
@@ -738,4 +737,68 @@ a.button{
 	margin-bottom:2em;
 	position: relative;
 	z-index: 2;
+}
+/*my.html*/
+.aside-menu,.content{
+	float:left;
+	margin:1.5em 0;
+}
+.aside-menu{
+	width:20%;
+}
+.aside-menu>ul>li{
+	margin-bottom:1em;
+}
+.aside-menu>ul>li>p{
+	font-weight:bold;
+	color:#333;
+	background:#fafafa;
+	padding:.5em 2em;
+}
+.aside-menu>ul ul a{
+	line-height:2em;
+	color:#666;
+	padding:.5em 2em 0;
+}
+.content{
+	width:78%;
+	margin-left:2%;
+	background:#fafafa;
+	min-height:536px;
+}
+/*login.html*/
+.aside-pic,.login-form{
+	float:left;
+	width:35%;
+	margin:100px 5%;
+}
+.aside-pic{
+	height:261px;
+	background:url(../images/loginbg.png) no-repeat right;
+	background-size:100% auto;
+}
+.login-form form{
+	padding:2em;
+	border-left:1px solid #ddd;
+	color:#666;
+}
+.input input{
+	width:100%;
+	padding:10px;
+	margin:.5em 0;
+}
+.checkbox input{
+	margin-right:4px;
+}
+.form-actions input[type=submit]{
+	border:0;
+	padding:10px 0;
+	color:#fff;
+	background:#F0A44B;
+	width:50%;
+}
+.form-actions a{
+	color:#C39766;
+	margin-left: 22px;
+	
 }
