@@ -782,12 +782,12 @@ a.button{
 	border-left:1px solid #ddd;
 	color:#666;
 }
-.input input{
+.login-form .input input{
 	width:100%;
 	padding:10px;
 	margin:.5em 0;
 }
-.checkbox input{
+.login-form .checkbox input{
 	margin-right:4px;
 }
 .form-actions input[type=submit]{
