@@ -279,12 +279,12 @@ nav>ul>li>ul{
 	vertical-align: middle;
 }
 /*slides*/
-.slide-ad{
+.slide-add{
 	position:absolute;
 	right:0;
 	top:0;
 }
-.slide-ad img{
+.slide-add img{
 	height:375px;
 	width:200px;
 }
