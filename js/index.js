@@ -23,10 +23,37 @@ $(function(e){
 		$('#'+tar).fadeIn(500).siblings('div').fadeOut(0);
 		e.preventDefault();
 	});
-    //选择
-    $('.order-way a,.item a').click(function(e){
+    //排序
+    var way=location.search.split('&')[1];
+    $('.order-way a').each(function(e){
+        var href = $(this).attr('href');
+        if(href.match(way)==way){
+            $(this).addClass('selected').siblings('a').removeClass('selected');
+        }
+    });
+    //分页
+    $('.page-actions a').click(function(e){
+        var $this  = $(this),
+           pageNum = $('.page-actions span').html().split('/');
+        if($this.attr('class').match('prev')=='prev'){
+            if(Number(pageNum[0]) > 1){
+                location.href = '&pageNum='+(Number(pageNum[0])-1);
+            }
+        }
+        if($this.attr('class').match('next')=='next'){
+            if(Number(pageNum[0]) < Number(pageNum[1])){
+                location.href = '&pageNum='+(Number(pageNum[0])+1);
+            }
+        }
+        e.preventDefault();
+    });
+    //选择商品细节
+    $('.item a').click(function(e){
         var $this = $(this);
+        //添加橙色选中状态样式
         $this.addClass('selected').siblings('a').removeClass('selected');
+
+        //商品数量加减
         if($this.attr('class').match('minus')=='minus'){
             var value = $('#sp-num').val();
             if(value > 1){
@@ -39,15 +66,57 @@ $(function(e){
                 $('#sp-num').val(Number(value)+1);
             }
         }
+
         e.preventDefault();
     });
 
+    //买
+    /*if ($this.parent('.item').attr('id').match('munth')=='munth') {
+        var rate = $('#munth a.selected strong').html();
+        location.href = '&rate='+rate;
+    };*/
+    $('#munth a').click(function(e){
+        //var id=$('#id').val(),
+         //buyCount = $('#sp-num').val(),
+         //ratio = parseFloat($('#sf-rate').val()),
+         rate = $('#munth a.selected strong').html();
+        //location.href='/product.aspx?id='+id+'&buyCount='+buyCount+'&ratio='+ratio+'&rate='+rate;
+         location.href = '&rate='+rate;
+    })
+    //其它处理
+    $('#sf-rate').change(function(){
+
+        var $this = $(this),
+            total = $('.value').html().split(',').join('');
+
+        var n = (parseFloat($this.val())*total/100).toString(),
+            re =  /\d{1,3}(?=(\d{3})+$)/g;
+
+        var n1=n.replace(/^(\d+)((\.\d+)?)$/,function(s,s1,s2){return s1.replace(re,"$&,")+s2;});
+
+        $('#shoufu').html(n1);
+        location.href = '&ratio='+parseFloat($this.val());
+
+    });
+    //千分位数字
+    $('.value,.sc-value,#yuegong').each(function(e){
+        var $this = $(this),
+                n = $this.html(),
+               re =  /\d{1,3}(?=(\d{3})+$)/g;
+
+        var n1=n.replace(/^(\d+)((\.\d+)?)$/,function(s,s1,s2){return s1.replace(re,"$&,")+s2;});
+        $this.html(n1);             
+    });
+
+    //全部商品
     $('.all-cat').hover(function(e){
         if($(this).attr('class').match('notindex')=='notindex'){
             $(this).toggleClass('collapse');
         }
         e.preventDefault();
     });
+
+
     
     // 图片上下滚动
 	var count = $("#imageMenu li").length - 5; /* 显示 6 个 li标签内容 */
@@ -68,30 +137,6 @@ $(function(e){
 	});	
 	// 解决 ie6 select框 问题
 	$.fn.decorateIframe = function(options) {
-        /*if ($.browser.msie && $.browser.version < 7) {
-            var opts = $.extend({}, $.fn.decorateIframe.defaults, options);
-            $(this).each(function() {
-                var $myThis = $(this);
-                //创建一个IFRAME
-                var divIframe = $("<iframe />");
-                divIframe.attr("id", opts.iframeId);
-                divIframe.css("position", "absolute");
-                divIframe.css("display", "none");
-                divIframe.css("display", "block");
-                divIframe.css("z-index", opts.iframeZIndex);
-                divIframe.css("border");
-                divIframe.css("top", "0");
-                divIframe.css("left", "0");
-                if (opts.width == 0) {
-                    divIframe.css("width", $myThis.width() + parseInt($myThis.css("padding")) * 2 + "px");
-                }
-                if (opts.height == 0) {
-                    divIframe.css("height", $myThis.height() + parseInt($myThis.css("padding")) * 2 + "px");
-                }
-                divIframe.css("filter", "mask(color=#fff)");
-                $myThis.append(divIframe);
-            });
-        }*/
     }
     $.fn.decorateIframe.defaults = {
         iframeId: "decorateIframe1",
@@ -189,13 +234,13 @@ $(function(e){
     }
 
     //tab
-    $("#content div").hide(); // Initially hide all content
+    $("#content>div").hide(); // Initially hide all content
 	$("#tabs li:first").attr("id","current"); // Activate first tab
-	$("#content div:first").fadeIn(); // Show first tab content
+	$("#content>div:first").fadeIn(); // Show first tab content
     
     $('#tabs a').click(function(e) {
         e.preventDefault();        
-        $("#content div").hide(); //Hide all content
+        $("#content>div").hide(); //Hide all content
         $("#tabs li").attr("id",""); //Reset id's
         $(this).parent().attr("id","current"); // Activate this
         $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab

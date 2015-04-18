@@ -87,20 +87,32 @@
     		</div><!--aside pic over-->
     		<div class="login-form">
     			<form action="" method="">
-            <legend>请您登录</legend>
+            <legend>注册新用户</legend>
             <div class="input">
-              <input type="text" name="username" placeholder="用户名／手机／邮箱">
+              <input type="text" name="tel" placeholder="手机号码">
             </div>
             <div class="input">
               <input type="password" name="password" placeholder="密码">
             </div>
+            <div class="input">
+              <input type="password" name="password" placeholder="确认密码">
+            </div>
+            <div class="input half">
+              <input type="text" name="yanzheng" placeholder="图片验证码">
+              <img src="images/yanzheng.png">
+            </div>
+            <div class="input half">
+              <input type="text" name="tel-yanzheng" placeholder="手机验证码">
+              <a href="" class="button">获取验证码</a>
+            </div>
             <div class="checkbox">
-              <label for="rem-me"><input type="checkbox" id="rem-me">记住我</label>
+              <label for="agreed" checked="checked">
+                <input type="checkbox" id="agreed">同意<a href="">《智分期用户注册协议》</a>
+              </label>
             </div>
             <div class="form-actions clearfix">
-              <input type="submit" value="登录" >
-              <a href="" class="right">忘记密码</a>
-              <a href="" class="right">免费注册</a>
+              <input type="submit" value="注册" >
+              <a href="login.html" class="right">有账号，直接登录</a>
             </div>
           </form>
     		</div>

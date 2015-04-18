@@ -22,6 +22,9 @@ a{
 span,a{
     display:inline-block;
 }
+.value:before,.sc-value:before,#shoufu:before,#yuegong:before{
+	content:"¥";
+}
 /*contact*/
 .contact{
 	position:fixed;
@@ -173,17 +176,27 @@ header .my{
 	left: -40px;
 }
 
-.my:before{
+.menus .right:before{
 	content:"";
 	display:inline-block;
 	width:16px;
 	height:16px;
-	background:url(../images/my.png) no-repeat;
-	background-size:auto 16px;
 	position:relative;
 	top:2px;
 	right:5px;
 	text-align:center;
+}
+.my:before{
+	background:url(../images/my.png) no-repeat;
+	background-size:auto 16px;
+}
+.car:before{
+	background:url(../images/car.png) no-repeat;
+	background-size:auto 16px;
+}
+.help:before{
+	background:url(../images/help.png) no-repeat;
+	background-size:auto 16px;
 }
 /*nav*/
 .all-cat{
@@ -244,16 +257,19 @@ nav>ul>li>ul{
 	display: inline-block;
 }
 .all-cat>ul>li{
-	height: 75px;
+	height: auto;
+}
+.all-cat>ul>li:last-child{
+	border-bottom:0;
 }
 .all-cat ul li{
 	background:#f4f4f4;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #fff;
 }
 .all-cat ul li a{
 	color:#333;
 	display: block;
-	padding: 10px 20px;
+	padding: 13.4px 20px;
 }
 .all-cat>a{
 	background: #F0A44B;
@@ -404,7 +420,7 @@ h2 span{
     font-size:20px;
 }
 .cat-nav h2 span{font-size:14px;opacity:.8;vertical-align: bottom;}
-.cat-nav h2:before,.all-cat>ul>li>a:before{
+.cat-nav h2:before{
 	content:"";
 	display:inline-block;
 	width:30px;
@@ -414,6 +430,18 @@ h2 span{
 	position:relative;
 	top:10px;
 	margin-right:8px;
+}
+.all-cat>ul>li>a:after{
+	content:">";
+	position:relative;
+	left:100px;
+	color:#aaa;
+}
+.all-cat>ul>li>a:hover{
+	background:#fff;
+}
+.all-cat>ul>li>a:hover:after{
+	content:"";
 }
 .cat-nav .header.tab h2:before,li.tab a:before{
 	background-position:-110px 0 !important;
@@ -738,6 +766,50 @@ a.button{
 	position: relative;
 	z-index: 2;
 }
+.taocan{
+	margin:1em 0;
+}
+.taocan>div{
+	float:left;
+	width:200px;
+	margin:2em;
+	position:relative;
+}
+.taocan .sp:first-child:after{
+	content:"+";
+	position:absolute;
+	right:-.7em;
+	font-size:80px;
+	top:20%;
+	color:#ECE8E2;
+}
+.taocan .sp img{
+	display:block;
+	margin:0 auto;
+}
+.taocan a,.taocan{
+	color:#888;
+	font-size:12px;
+}
+.taocan a.button{
+	color:#fff;
+	margin-top:10px;
+}
+.taocan .value{
+	color:#F0A44B;
+}
+.taocan .right{
+	float:right;
+	margin-top:50px;
+}
+.taocan .right:before{
+	content:"=";
+	position:absolute;
+	left:-1em;
+	top:20%;
+	font-size:80px;
+	color:#ECE8E2;
+}
 /*my.html*/
 .aside-menu,.content{
 	float:left;
@@ -771,12 +843,22 @@ a.button{
 	float:left;
 	width:35%;
 	margin:100px 5%;
+	position:relative;
 }
 .aside-pic{
 	height:261px;
 	background:url(../images/loginbg.png) no-repeat right;
 	background-size:100% auto;
 }
+legend{
+	font-size:1.4em;
+	display:block;
+	width:100%;
+	margin-bottom:1em;
+	padding-bottom:.5em;
+	border-bottom:1px dashed #C0996F;
+}
+
 .login-form form{
 	padding:2em;
 	border-left:1px solid #ddd;
@@ -787,9 +869,29 @@ a.button{
 	padding:10px;
 	margin:.5em 0;
 }
+.login-form .input.half input{
+	width:60%;
+}
+.login-form .input.half img{
+	width: 38%;
+	vertical-align: bottom;
+}
+.login-form .input.half a{
+	padding: 8px 10px;
+	width: 31%;
+	text-align: center;
+	margin-left: 1%;
+}
 .login-form .checkbox input{
 	margin-right:4px;
 }
+.login-form .checkbox a{
+	color: #C39766;
+}
+.form-actions{
+	margin:2em 0;
+}
+
 .form-actions input[type=submit]{
 	border:0;
 	padding:10px 0;
@@ -800,5 +902,4 @@ a.button{
 .form-actions a{
 	color:#C39766;
 	margin-left: 22px;
-	
 }

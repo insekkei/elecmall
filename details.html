@@ -21,8 +21,9 @@
         <a href="login.html">［请登录］</a>
         <a href="register.html">［免费注册］</a>
         
-        <a href="help.html" class="right">帮助</a>
+        <a class="help right" href="help.html">帮助</a>
         <a class="my right" href="my.html">我的智分期</a>
+        <a class="car right" href="my.html">购物车</a>
       </p>
     </div><!--/顶部-->
     <div class="wrapper">
@@ -113,6 +114,7 @@
           <div class="items">
             <h2>苹果iPhone 6 Plus 金色16G A1524 免费服务啦！</h2>
             <p>1-12期0服务费，12期以上5折服务费，现货顺丰包邮</p>
+            <input type="hidden" id="id" value="11111">
             <div class="item">
               <span>颜色：</span>
               <a href="">金</a>
@@ -135,11 +137,11 @@
             </div>
             <div class="item fenqi">
               <span>售价：</span>
-              ¥<strong class="value">6,088.00</strong> 市场价：¥<strong class="sc-value">6,288.00</strong>
+              <strong class="value">6088.00</strong> 市场价：<strong class="sc-value">6288.00</strong>
             </div>
             <div class="item fenqi">
               <span>首付比例：</span>
-              <select>
+              <select id="sf-rate">
                 <option>0%</option>
                 <option>20%</option>
                 <option>50%</option>
@@ -147,22 +149,21 @@
                 <option>100%</option>
               </select>
             </div>
-            <div class="item fenqi">
+            <div class="item fenqi" id="munth">
               <span>分期月数：</span>
-              <a href="">3个月</a>
-              <a href="">6个月</a>
-              <a href="">9个月</a>
-              <a href="">12个月</a>
-              <a href="">15个月</a>
-              <a href="">18个月</a>
-              <a href="">24个月</a>
+              <a href="&rate=3"><strong>3</strong>个月</a>
+              <a href="&rate=6"><strong>6</strong>个月</a>
+              <a href="&rate=9"><strong>9</strong>个月</a>
+              <a href="&rate=12"><strong>12</strong>个月</a>
+              <a href="&rate=15"><strong>15</strong>个月</a>
+              <a href="&rate=18"><strong>18</strong>个月</a>
+              <a href="&rate=24"><strong>24</strong>个月</a>
             </div>
             <div class="item fenqi after">
-              首付金额：<strong>¥0.00</strong>
-              月供金额：<strong>¥306.94</strong>
-              日供金额：<strong>¥10.23</strong>
+              首付金额：<strong id="shoufu">0.00</strong>
+              月供金额：<strong id="yuegong">306.94</strong>
             </div>
-            <a class="button db" href="">立即下单</a>
+            <a class="button db" href="" id="buy">立即下单</a>
           </div>
         </article>
       </section>
@@ -170,10 +171,30 @@
         <ul id="tabs">
           <li><a href="#" title="tab1">商品详情</a></li>
           <li><a href="#" title="tab2">规格参数</a></li>
-          <li><a href="#" title="tab3">商品评论</a></li>
         </ul>
         <div id="content">
           <div id="tab1">
+            <h2>优惠套餐</h2>
+            <div class="taocan clearfix">
+              <div class="sp">
+                <a href="details.html">
+                  <img src="http://cdn.ufenqi.com/ITEM_2715_1425895333245_1.jpg@120h_120w">
+                  联想（lenovo）Y430p 14.0英寸笔记本电脑（i7-4710）2G独显 DVD刻 摄像头
+                </a>
+              </div>
+              <div class="sp">
+                <a href="details.html">
+                  <img src="http://cdn.ufenqi.com/ITEM_3282_1425366997026_1.jpg@120h_120w">
+                  联想（lenovo）Y430p 14.0英寸笔记本电脑（i7-4710）2G独显 DVD刻 摄像头
+                </a>
+              </div>
+              <div class="right heji">
+                <p>套餐价：<strong class="value">6088.00</strong></p> 
+                <p>市场价：<strong class="sc-value">6288.00</strong></p>
+                <p>立即节省：<strong class="value">200.00</strong></p>
+                <p><a href="" class="button">立即购买</a></p>
+              </div>
+            </div>
             <h2>苹果iPhone 6 Plus 金色16G A1524 免费服务啦！</h2>
             <img src="http://img30.360buyimg.com/jgsq-productsoa/jfs/t277/226/1327717066/63340/b99982a1/5437431cN13d77dcf.jpg" width="100%">
             <p>iPhone 6 之大，不只是简简单单地放大，而是方方面面都大有提升。它尺寸更大，却纤薄得不可思议；性能更强，却效能非凡。光滑圆润的金属机身，与全新 Retina HD 高清显示屏精准契合，浑然一体。而软硬件间的搭配，更是默契得宛如天作之合。无论以何种尺度衡量，这一切，都让 iPhone 新一代的至大之作，成为至为出众之作。</p>
@@ -182,13 +203,6 @@
             
           </div>
           <div id="tab2">
-            <h2>苹果iPhone 6 Plus 金色16G A1524 免费服务啦！</h2>
-            <img src="http://img30.360buyimg.com/jgsq-productsoa/jfs/t277/226/1327717066/63340/b99982a1/5437431cN13d77dcf.jpg" width="100%">
-            <p>iPhone 6 之大，不只是简简单单地放大，而是方方面面都大有提升。它尺寸更大，却纤薄得不可思议；性能更强，却效能非凡。光滑圆润的金属机身，与全新 Retina HD 高清显示屏精准契合，浑然一体。而软硬件间的搭配，更是默契得宛如天作之合。无论以何种尺度衡量，这一切，都让 iPhone 新一代的至大之作，成为至为出众之作。</p>
-            <img alt="" class="err-product" height="686" src="http://img30.360buyimg.com/jgsq-productsoa/jfs/t316/228/1339520476/194272/2672d1b8/54374323Nd2a4043c.jpg" width="100%">
-            <p>要开发一个尺寸更大，更先进的iPhone显示屏，就要在设计上大大突出极限。从金属与玻璃的精密结合，到光滑圆润的流线机身，每处细节都是深思熟虑的结晶，旨在带给你更为出众的使用体验。因此，虽然iPhone6的显示屏变大了，但却让人感觉大得恰到好处。</p>
-          </div>
-          <div id="tab3">
             <h2>苹果iPhone 6 Plus 金色16G A1524 免费服务啦！</h2>
             <img src="http://img30.360buyimg.com/jgsq-productsoa/jfs/t277/226/1327717066/63340/b99982a1/5437431cN13d77dcf.jpg" width="100%">
             <p>iPhone 6 之大，不只是简简单单地放大，而是方方面面都大有提升。它尺寸更大，却纤薄得不可思议；性能更强，却效能非凡。光滑圆润的金属机身，与全新 Retina HD 高清显示屏精准契合，浑然一体。而软硬件间的搭配，更是默契得宛如天作之合。无论以何种尺度衡量，这一切，都让 iPhone 新一代的至大之作，成为至为出众之作。</p>
