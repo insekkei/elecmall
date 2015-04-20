@@ -766,6 +766,10 @@ a.button{
 	position: relative;
 	z-index: 2;
 }
+.yhtc h2{
+	background:#ECE8E2;
+	padding:.4em 10px;
+}
 .taocan{
 	margin:1em 0;
 }
@@ -902,4 +906,42 @@ legend{
 .form-actions a{
 	color:#C39766;
 	margin-left: 22px;
+}
+/*order*/
+.order-content{
+	padding:1em;
+	margin-bottom:8em;
+}
+.order-content h3{
+	border-bottom:2px solid #C39766;
+	margin:1em 0;
+}
+.order-content p{
+	color:#666;
+	width:960px;
+	margin:0 auto;
+	padding:3px 8px;
+}
+.order-content p span{
+	min-width: 200px;
+	margin-right: 2em;
+}
+.order-title{
+	width:100% !important;
+}
+.order-title span{
+	display: inline;
+	color:#F0A44B;
+}
+table{
+	width:960px;
+	margin:0 auto;
+	border-bottom:2px solid #F7F7F7;
+	color:#666;
+}
+th,td{
+	padding:3px 8px;
+}
+th{
+	background:#f7f7f7;
 }
