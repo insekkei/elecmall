@@ -845,9 +845,12 @@ a.button{
 /*login.html*/
 .aside-pic,.login-form{
 	float:left;
-	width:35%;
+	width:30%;
 	margin:100px 5%;
 	position:relative;
+}
+.login-form{
+	width:50%;
 }
 .aside-pic{
 	height:261px;
@@ -861,6 +864,7 @@ legend{
 	margin-bottom:1em;
 	padding-bottom:.5em;
 	border-bottom:1px dashed #C0996F;
+	padding-left: 4.6em;
 }
 
 .login-form form{
@@ -868,21 +872,31 @@ legend{
 	border-left:1px solid #ddd;
 	color:#666;
 }
+
+.login-form form .checkbox,.login-form form .form-actions{
+	padding-left:6.8em;
+}
 .login-form .input input{
-	width:100%;
+	width: 25em;
 	padding:10px;
 	margin:.5em 0;
 }
+.login-form .input label{
+	display:inline-block;
+	width:6em;
+	text-align: right;
+	margin-right: .5em;
+}
 .login-form .input.half input{
-	width:60%;
+	width: 16em;
 }
 .login-form .input.half img{
-	width: 38%;
-	vertical-align: bottom;
+	height: 36px;
+	vertical-align: middle;
 }
 .login-form .input.half a{
 	padding: 8px 10px;
-	width: 31%;
+	width: 90px;
 	text-align: center;
 	margin-left: 1%;
 }
